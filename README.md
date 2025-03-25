@@ -1,66 +1,78 @@
-ONNX-Based Machine Learning Model
-This repository demonstrates how to convert a trained machine learning model into ONNX format and then load and use the ONNX model for inference.
 
-🧑‍💻 Project Setup
-Follow these instructions to set up the project and run the code.
+---
 
-🔧 Requirements
-Ensure you have the following libraries installed:
+# ONNX-Based Machine Learning Model  
 
-bash
-Copy
-Edit
+This repository demonstrates the process of training a simple machine learning model, converting it to the ONNX format, and performing inference using the ONNX model.  
+
+---
+
+## 🛠 **Project Setup**  
+
+### 🔧 **Requirements**  
+Install the required libraries using:  
+```bash  
 pip install onnxruntime scikit-learn joblib numpy  
-📂 Files in This Repository
-train_and_save_model.py: Trains a simple machine learning model using scikit-learn, saves it as a .joblib file, and converts it to ONNX format.
+```  
 
-load_onnx_model.py: Loads the ONNX model and runs inference on test data.
+### 📂 **Files in This Repository**  
 
-🚀 How to Run the Code
-Train the Model and Convert to ONNX
-Run the following command to train and save the model in ONNX format:
+- **`train_and_save_model.py`**:  
+  Trains a machine learning model using `scikit-learn`, saves it as a `.joblib` file, and converts it to ONNX format.  
+- **`load_onnx_model.py`**:  
+  Loads the ONNX model and performs inference on test data.  
 
-bash
-Copy
-Edit
+---
+
+## 🚀 **How to Run the Code**  
+
+### 1️⃣ **Train the Model and Convert it to ONNX**  
+Run the following command to train the model and save it in ONNX format:  
+```bash  
 python train_and_save_model.py  
-This will generate the following files:
+```  
+This will generate the following files:  
+- **`ml_model.joblib`**: The original machine learning model.  
+- **`ml_model.onnx`**: The converted ONNX model.  
 
-ml_model.joblib: The original machine learning model.
-
-ml_model.onnx: The converted ONNX model.
-
-Run Inference on the ONNX Model
-Run the ONNX inference code with the command:
-
-bash
-Copy
-Edit
+### 2️⃣ **Run Inference Using the ONNX Model**  
+Run the inference code with:  
+```bash  
 python load_onnx_model.py  
-This will output predictions on the test data.
+```  
+This will output predictions on the test data.  
 
-📝 Code Explanation
-1. Training and Saving the Model (train_and_save_model.py)
-This file trains a simple machine learning model using a DecisionTreeClassifier from scikit-learn.
-After training:
+---
 
-The model is saved as ml_model.joblib using joblib.
+## 📜 **Code Explanation**  
 
-It is then converted into ONNX format using the skl2onnx library.
+### **1. Training and Saving the Model (`train_and_save_model.py`)**  
+- Trains a `DecisionTreeClassifier` on dummy data using `scikit-learn`.  
+- Saves the trained model as `ml_model.joblib`.  
+- Converts the model into ONNX format and saves it as `ml_model.onnx`.  
 
-2. Loading and Running the ONNX Model (load_onnx_model.py)
-This file demonstrates how to load the saved ml_model.onnx file using the onnxruntime library and run inference on the test dataset.
+### **2. Loading and Running the ONNX Model (`load_onnx_model.py`)**  
+- Loads the ONNX model using the `onnxruntime` library.  
+- Performs inference on test data and prints the predictions.  
 
-🔮 What is ONNX?
-ONNX (Open Neural Network Exchange) is an open-source format designed to make machine learning models portable across frameworks. It allows you to train a model in one framework (like scikit-learn) and use it in another environment with minimal effort.
+---
 
-🌟 Key Features
-Framework Portability: Convert machine learning models into ONNX format.
+## 🌟 **What is ONNX?**  
+ONNX (Open Neural Network Exchange) is an open-source format for machine learning models that allows models trained in one framework (e.g., `scikit-learn`) to be used in other frameworks with ease.  
 
-Efficient Inference: Leverage onnxruntime for optimized inference speed.
+---
 
-Minimal Dependencies: Only core Python libraries (numpy, onnxruntime, etc.) are required.
+---
 
-📜 License
-This project is licensed under the MIT License. Feel free to use, modify, and distribute this code! 🖖
+## 📝 **License**  
+This project is licensed under the MIT License.  
+
+---
+
+### 🎯 **Key Features**  
+- Framework Portability: Convert models to ONNX format for cross-platform compatibility.  
+- Efficient Inference: Leverage ONNX runtime optimizations for fast predictions.  
+- Minimal Dependencies: Use only core libraries for simplicity and efficiency.  
+
+---
 
